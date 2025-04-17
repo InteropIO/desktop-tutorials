@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<!-- io.Connect THEME -->
+<html lang="en" class="dark">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Clients</title>
+
+    <!-- STYLES -->
+    <link rel="stylesheet" href="/lib/io.applications.css">
+
+    <!-- SCRIPTS -->
+    <!-- TODO: Chapter 3 -->
+    <script src="/lib/desktop.umd.js"></script>
+    <!-- TODO: Chapter 9.2 -->
+    <!-- TODO: Chapter 9.3 -->
+    <script src="./index.js"></script>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="row m-0 px-0 pt-1">
+                <div class="col-6 px-1">
+                    <span id="ioConnectSpan" class="badge bg-danger">io.Connect is unavailable</span>
+                </div>
+                <div class="col-6 px-1 text-end">
+                    <button class="btn btn-primary" id="stocks-btn">Stocks</button>
+                </div>
+            </div>
+            <div class="row m-0">
+                <h1 class="text-center">Clients</h1>
+            </div>
+        </div>
+        <div class="row">
+            <table id="clientsTable" class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Full Name</th>
+                        <th>PID</th>
+                        <th>GID</th>
+                        <th>Account Manager</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+
+</html>
