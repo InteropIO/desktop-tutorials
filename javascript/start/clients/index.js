@@ -34,35 +34,24 @@ const setupClients = (clients) => {
 };
 
 // TODO: Chapter 3
-const toggleIOAvailable = () => {
-    const span = document.getElementById("ioConnectSpan");
+// const toggleIOAvailable = () => {
+//     const span = document.getElementById("ioConnectSpan");
 
-    span.classList.remove("bg-danger");
-    span.classList.add("bg-success");
-    span.textContent = "io.Connect is available";
-};
+//     span.classList.remove("bg-danger");
+//     span.classList.add("bg-success");
+//     span.textContent = "io.Connect is available";
+// };
 
-const clientClickedHandler = (client) => {
+const clientClickedHandler = async (client) => {
     // TODO: Chapter 5.2
-    // const selectClientStocks = io.interop.methods().find(method => method.name === "SelectClient");
 
     // TODO: Chapter 5.3
-    // if (selectClientStocks) {
-    //     io.interop.invoke(selectClientStocks, { client });
-    // };
 
     // TODO: Chapter 6.1
-    io.contexts.update("SelectedClient", client).catch(console.error);
 
     // TODO: Chapter 7.2
-    const currentChannel = io.channels.my();
 
-    if (currentChannel) {
-        io.channels.publish(client).catch(console.error);
-    };
-
-    // TODO: Chapter 9.4
-
+    // TODO: Chapter 9.3
 };
 
 let counter = 1;
@@ -71,20 +60,11 @@ const stocksButtonHandler = () => {
     const instanceID = sessionStorage.getItem("counter");
 
     // TODO: Chapter 4.1
-    const name = `Stocks-${instanceID || counter}`;
-    const URL = "http://localhost:9100/";
-    const config = {
-        width: 500,
-        height: 450,
-        channelSelector: {
-            enabled: true
-        }
-    };
-
-    io.windows.open(name, URL, config).catch(console.error);
 
     counter++;
     sessionStorage.setItem("counter", counter);
+
+    // TODO: Chapter 8.1
 };
 
 const raiseNotificationOnWorkspaceOpen = async (clientName, workspace) => {
@@ -102,15 +82,6 @@ const start = async () => {
     stocksButton.onclick = stocksButtonHandler;
 
     // TODO: Chapter 3
-    const config = {
-        channels: true
-    };
-
-    const io = await IODesktop(config);
-
-    window.io = io;
-
-    toggleIOAvailable();
 };
 
 start().catch(console.error);

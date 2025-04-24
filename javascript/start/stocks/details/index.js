@@ -32,58 +32,38 @@ const updateStockPrices = (bid, ask) => {
 };
 
 // TODO: Chapter 3
-const toggleIOAvailable = () => {
-    const span = document.getElementById("ioConnectSpan");
+// const toggleIOAvailable = () => {
+//     const span = document.getElementById("ioConnectSpan");
 
-    span.classList.remove("bg-danger");
-    span.classList.add("bg-success");
-    span.textContent = "io.Connect is available";
-};
+//     span.classList.remove("bg-danger");
+//     span.classList.add("bg-success");
+//     span.textContent = "io.Connect is available";
+// };
 
 // TODO: Chapter 6.2
-const updateClientStatus = (client, stock) => {
-    const message = client.portfolio.includes(stock.RIC) ?
-        `${stock.RIC} is in ${client.name}'s portfolio.` :
-        `${stock.RIC} isn't in ${client.name}'s portfolio.`;
-    const elementTitle = document.getElementById("clientStatus");
+// const updateClientStatus = (client, stock) => {
+//     const message = client.portfolio.includes(stock.RIC) ?
+//         `${stock.RIC} is in ${client.name}'s portfolio.` :
+//         `${stock.RIC} isn't in ${client.name}'s portfolio.`;
+//     const elementTitle = document.getElementById("clientStatus");
 
-    elementTitle.innerText = message;
-};
+//     elementTitle.innerText = message;
+// };
 
 const start = async () => {
     // TODO: Chapter 3
-    const io = await IODesktop();
-
-    window.io = io;
-
-    toggleIOAvailable();
 
     // TODO: Chapter 4.3
-    const myWindow = io.windows.my();
-    const stock = await myWindow.getContext();
+
+    // TODO: Chapter 8.3
 
     setFields(stock);
 
     // TODO: Chapter 5.4
-    const subscription = await io.interop.subscribe("LivePrices");
-
-    const streamDataHandler = (streamData) => {
-        const updatedStocks = streamData.data.stocks;
-        const selectedStockPrice = updatedStocks.find(updatedStock => updatedStock.RIC === stock.RIC);
-
-        updateStockPrices(selectedStockPrice.Bid, selectedStockPrice.Ask);
-    };
-
-    subscription.onData(streamDataHandler);
 
     // TODO: Chapter 6.2
-    const updateHandler = (client) => {
-        updateClientStatus(client, stock);
-    };
 
-    io.contexts.subscribe("SelectedClient", updateHandler);
-
-    // TODO: Chapter 9.6
+    // TODO: Chapter 9.5
 };
 
 start().catch(console.error);

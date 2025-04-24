@@ -24,18 +24,24 @@ const setupTitle = (clientName) => {
 };
 
 // TODO: Chapter 3
-// const toggleIOAvailable = () => {
-//     const span = document.getElementById("ioConnectSpan");
+const toggleIOAvailable = () => {
+    const span = document.getElementById("ioConnectSpan");
 
-//     span.classList.remove("bg-danger");
-//     span.classList.add("bg-success");
-//     span.textContent = "io.Connect is available";
-// };
+    span.classList.remove("bg-danger");
+    span.classList.add("bg-success");
+    span.textContent = "io.Connect is available";
+};
 
 async function start() {
     // TODO: Chapter 3
+    const io = await IODesktop();
+
+    window.io = io;
+
+    toggleIOAvailable();
 
     // TODO: Chapter 10.1
+    io.intents.register("ExportPortfolio", intentHandler);
 };
 
 start().catch(console.error);

@@ -16,18 +16,37 @@ const setFields = (client) => {
 };
 
 // TODO: Chapter 3
-// const toggleIOAvailable = () => {
-//     const span = document.getElementById("ioConnectSpan");
+const toggleIOAvailable = () => {
+    const span = document.getElementById("ioConnectSpan");
 
-//     span.classList.remove("bg-danger");
-//     span.classList.add("bg-success");
-//     span.textContent = "io.Connect is available";
-// };
+    span.classList.remove("bg-danger");
+    span.classList.add("bg-success");
+    span.textContent = "io.Connect is available";
+};
 
 const start = async () => {
     // TODO: Chapter 3
+    const config = {
+        libraries: [IOWorkspaces]
+    };
+
+    const io = await IODesktop(config);
+
+    window.io = io;
+
+    toggleIOAvailable();
 
     // TODO: Chapter 9.4
+    const myWorkspace = await io.workspaces.getMyWorkspace();
+
+    if (myWorkspace) {
+        myWorkspace.onContextUpdated((context) => {
+            if (context.client) {
+                setFields(context.client);
+                myWorkspace.setTitle(context.client.name);
+            };
+        });
+    };
 };
 
 start().catch(console.error);

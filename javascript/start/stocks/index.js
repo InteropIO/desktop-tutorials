@@ -111,13 +111,13 @@ const setupStocks = (stocks) => {
 };
 
 // TODO: Chapter 3
-const toggleIOAvailable = () => {
-    const span = document.getElementById("ioConnectSpan");
+// const toggleIOAvailable = () => {
+//     const span = document.getElementById("ioConnectSpan");
 
-    span.classList.remove("bg-danger");
-    span.classList.add("bg-success");
-    span.textContent = "io.Connect is available";
-};
+//     span.classList.remove("bg-danger");
+//     span.classList.add("bg-success");
+//     span.textContent = "io.Connect is available";
+// };
 
 const newPricesHandler = (priceUpdate) => {
     priceUpdate.stocks.forEach((stock) => {
@@ -135,40 +135,20 @@ const newPricesHandler = (priceUpdate) => {
     });
 
     // TODO: Chapter 5.1
-    if (priceStream) {
-        priceStream.push(priceUpdate);
-    };
 };
 
-const stockClickedHandler = (stock) => {
+const stockClickedHandler = async (stock) => {
     // TODO: Chapter 4.1
-    // window.location.href = `http://${window.location.host}/details/index.html`;
-    const name = `${stock.BPOD} Details`;
-    const URL = "http://localhost:9100/details/";
-    const config = {
-        left: 100,
-        top: 100,
-        width: 550,
-        height: 350,
-        context: stock
-    };
+    window.location.href = `http://${window.location.host}/details/index.html`;
 
-    // Check whether the clicked stock has already been opened in a new window.
-    const stockWindowExists = io.windows.list().find(w => w.name === name);
+    // TODO: Chapter 8.3
 
-    if (!stockWindowExists) {
-        io.windows.open(name, URL, config).catch(console.error);
-    };
-
-    // TODO: Chapter 7.3
-
-    // TODO: Chapter 9.6
+    // TODO: Chapter 9.5
 };
 
 const exportPortfolioButtonHandler = async (portfolio) => {
     // TODO: Chapter 10.2
 };
-
 
 const start = async () => {
     const stocksResponse = await fetch("http://localhost:8080/api/portfolio");
@@ -178,54 +158,16 @@ const start = async () => {
     generateStockPrices(newPricesHandler);
 
     // TODO: Chapter 3
-    const config = {
-        channels: true
-    };
-
-    const io = await IODesktop(config);
-
-    window.io = io;
-
-    toggleIOAvailable();
 
     // TODO: Chapter 5.1
-    // const methodName = "SelectClient";
-    // const methodHandler = (args) => {
-    //     const clientPortfolio = args.client.portfolio;
-    //     const stockToShow = stocks.filter(stock => clientPortfolio.includes(stock.RIC));
-
-    //     setupStocks(stockToShow);
-    // };
-
-    // io.interop.register(methodName, methodHandler);
-
-    window.priceStream = await io.interop.createStream("LivePrices");
 
     // TODO: Chapter 6.2
-    // const updateHandler = (client) => {
-    //     const clientPortfolio = client.portfolio;
-    //     const stockToShow = stocks.filter(stock => clientPortfolio.includes(stock.RIC));
-
-    //     setupStocks(stockToShow);
-    // };
-
-    // io.contexts.subscribe("SelectedClient", updateHandler);
 
     // TODO: Chapter 8.2
 
     // TODO: Chapter 7.2
-    const updateHandler = (client) => {
-        if (client.portfolio) {
-            const clientPortfolio = client.portfolio;
-            const stockToShow = stocks.filter(stock => clientPortfolio.includes(stock.RIC));
 
-            setupStocks(stockToShow);
-        };
-    };
-
-    io.channels.subscribe(updateHandler);
-
-    // TODO: Chapter 9.5
+    // TODO: Chapter 9.4
 
     // TODO: Chapter 10.2
     // const exportPortfolioButton = document.getElementById("exportPortfolio");
