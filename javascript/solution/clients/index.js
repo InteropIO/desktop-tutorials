@@ -87,6 +87,8 @@ const clientClickedHandler = async (client) => {
 //     // const config = {
 //     //     width: 500,
 //     //     height: 450,
+//     //     minWidth: 450,
+//     //     minHeight: 400,
 //     //     channelSelector: {
 //     //         enabled: true
 //     //     }
@@ -101,13 +103,8 @@ const clientClickedHandler = async (client) => {
 //     const stocksApp = io.appManager.application("stocks");
 //     const currentChannel = io.channels.my();
 //     const context = { channel: currentChannel };
-//     const options = {
-//         width: 500,
-//         height: 450,
-//         ignoreSavedLayout: true
-//     };
 
-//     stocksApp.start(context, options).catch(console.error);
+//     stocksApp.start(context).catch(console.error);
 // };
 
 const raiseNotificationOnWorkspaceOpen = async (clientName, workspace) => {

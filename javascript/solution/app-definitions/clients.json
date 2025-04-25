@@ -4,8 +4,8 @@
     "type": "window",
     "details": {
         "url": "http://localhost:9000/",
-        "minHeight": 400,
         "minWidth": 400,
+        "minHeight": 400,
         "channelSelector": {
             "enabled": false
         }

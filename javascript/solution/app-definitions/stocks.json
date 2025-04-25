@@ -3,10 +3,13 @@
         "name": "stocks",
         "title": "Stocks",
         "type": "window",
+        "ignoreSavedLayout": true,
         "details": {
             "url": "http://localhost:9100/",
-            "minHeight": 400,
+            "width": 500,
+            "height": 450,
             "minWidth": 450,
+            "minHeight": 400,
             "channelSelector": {
                 "enabled": false
             }
