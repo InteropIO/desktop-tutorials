@@ -101,13 +101,15 @@ const start = async () => {
         setFields(selectedStock);
     };
 
-    myWindow.onContextUpdated((context) => {
+    const updateHandler = (context) => {
         if (context.stock) {
             selectedStock = context.stock;
 
             setFields(selectedStock);
         };
-    });
+    };
+
+    myWindow.onContextUpdated(updateHandler);
 
     const subscription = await io.interop.subscribe("LivePrices");
 

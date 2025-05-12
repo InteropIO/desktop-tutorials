@@ -295,7 +295,7 @@ const start = async () => {
     const myWorkspace = await io.workspaces.getMyWorkspace();
 
     if (myWorkspace) {
-        myWorkspace.onContextUpdated((context) => {
+        const updateHandler = (context) => {
             if (context.client) {
                 const clientPortfolio = context.client.portfolio;
                 clientPortfolioStocks = stocks.filter((stock) => clientPortfolio.includes(stock.RIC));
@@ -303,7 +303,9 @@ const start = async () => {
 
                 setupStocks(clientPortfolioStocks);
             };
-        });
+        };
+
+        myWorkspace.onContextUpdated(updateHandler);
     };
 
     // TODO: Chapter 10.2

@@ -40,12 +40,14 @@ const start = async () => {
     const myWorkspace = await io.workspaces.getMyWorkspace();
 
     if (myWorkspace) {
-        myWorkspace.onContextUpdated((context) => {
+        const updateHandler = (context) => {
             if (context.client) {
                 setFields(context.client);
                 myWorkspace.setTitle(context.client.name);
             };
-        });
+        };
+
+        myWorkspace.onContextUpdated(updateHandler);
     };
 };
 
