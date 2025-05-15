@@ -82,6 +82,8 @@ const start = async () => {
     stocksButton.onclick = stocksButtonHandler;
 
     // TODO: Chapter 3
+
+    // TODO: Chapter 12.1
 };
 
 start().catch(console.error);

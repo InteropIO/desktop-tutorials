@@ -51,6 +51,11 @@ const updateClientStatus = (client, stock) => {
 };
 
 const start = async () => {
+    const html = document.documentElement;
+    const initialTheme = iodesktop.theme;
+
+    html.className = initialTheme;
+
     // TODO: Chapter 3
     const config = {
         appManager: "full"
@@ -61,6 +66,13 @@ const start = async () => {
     window.io = io;
 
     toggleIOAvailable();
+
+    // TODO: Chapter 12.1
+    const themeHandler = (newTheme) => {
+        html.className = newTheme.name;
+    };
+
+    io.themes.onChanged(themeHandler);
 
     // TODO: Chapter 4.3
     // const myWindow = io.windows.my();

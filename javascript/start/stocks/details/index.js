@@ -53,6 +53,8 @@ const updateStockPrices = (bid, ask) => {
 const start = async () => {
     // TODO: Chapter 3
 
+    // TODO: Chapter 12.1
+
     // TODO: Chapter 4.3
 
     // TODO: Chapter 8.3

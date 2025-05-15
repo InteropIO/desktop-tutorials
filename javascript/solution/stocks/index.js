@@ -229,6 +229,11 @@ const exportPortfolioButtonHandler = async (portfolio) => {
 
 
 const start = async () => {
+    const html = document.documentElement;
+    const initialTheme = iodesktop.theme;
+
+    html.className = initialTheme;
+
     const stocksResponse = await fetch("http://localhost:8080/api/portfolio");
     const stocks = await stocksResponse.json();
 
@@ -247,6 +252,13 @@ const start = async () => {
     window.io = io;
 
     toggleIOAvailable();
+
+    // TODO: Chapter 12.1
+    const themeHandler = (newTheme) => {
+        html.className = newTheme.name;
+    };
+
+    io.themes.onChanged(themeHandler);
 
     // TODO: Chapter 5.1
     // const methodName = "SelectClient";

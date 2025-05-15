@@ -33,12 +33,24 @@ const toggleIOAvailable = () => {
 };
 
 async function start() {
+    const html = document.documentElement;
+    const initialTheme = iodesktop.theme;
+
+    html.className = initialTheme;
+
     // TODO: Chapter 3
     const io = await IODesktop();
 
     window.io = io;
 
     toggleIOAvailable();
+
+    // TODO: Chapter 12.1
+    const themeHandler = (newTheme) => {
+        html.className = newTheme.name;
+    };
+
+    io.themes.onChanged(themeHandler);
 
     // TODO: Chapter 10.1
     io.intents.register("ExportPortfolio", intentHandler);

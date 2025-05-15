@@ -25,6 +25,11 @@ const toggleIOAvailable = () => {
 };
 
 const start = async () => {
+    const html = document.documentElement;
+    const initialTheme = iodesktop.theme;
+
+    html.className = initialTheme;
+
     // TODO: Chapter 3
     const config = {
         libraries: [IOWorkspaces]
@@ -35,6 +40,13 @@ const start = async () => {
     window.io = io;
 
     toggleIOAvailable();
+
+    // TODO: Chapter 12.1
+    const themeHandler = (newTheme) => {
+        html.className = newTheme.name;
+    };
+
+    io.themes.onChanged(themeHandler);
 
     // TODO: Chapter 9.4
     const myWorkspace = await io.workspaces.getMyWorkspace();

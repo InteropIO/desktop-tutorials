@@ -35,6 +35,8 @@ const setupTitle = (clientName) => {
 async function start() {
     // TODO: Chapter 3
 
+    // TODO: Chapter 12.1
+
     // TODO: Chapter 10.1
 };
 
