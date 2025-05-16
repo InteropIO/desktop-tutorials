@@ -155,6 +155,29 @@ const start = async () => {
     };
 
     io.themes.onChanged(themeHandler);
+
+    // TODO: Chapter 13
+    const stocksAppHotkey = {
+        hotkey: "alt+shift+s",
+        description: "Starts the Stocks app."
+    };
+
+    const stocksAppHotkeyHandler = () => io.appManager.application("stocks").start();
+
+    const themeHotkey = {
+        hotkey: "alt+shift+t",
+        description: "Toggles the platform theme."
+    };
+
+    const themeHotkeyHandler = async () => {
+        const currentTheme = await io.themes.getCurrent();
+        const themeToSelect = currentTheme.name === "dark" ? "light" : "dark";
+
+        io.themes.select(themeToSelect);
+    };
+
+    io.hotkeys.register(stocksAppHotkey, stocksAppHotkeyHandler);
+    io.hotkeys.register(themeHotkey, themeHotkeyHandler);
 };
 
 start().catch(console.error);
