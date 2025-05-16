@@ -1,0 +1,63 @@
+{
+    "name": "Client Space",
+    "type": "Workspace",
+    "metadata": {},
+    "components": [
+        {
+            "type": "Workspace",
+            "state": {
+                "children": [
+                    {
+                        "type": "column",
+                        "children": [
+                            {
+                                "type": "row",
+                                "children": [
+                                    {
+                                        "type": "group",
+                                        "children": [
+                                            {
+                                                "type": "window",
+                                                "config": {
+                                                    "appName": "client-details",
+                                                    "title": "Client Details"
+                                                }
+                                            }
+                                        ],
+                                        "config": {}
+                                    },
+                                    {
+                                        "type": "column",
+                                        "children": [
+                                            {
+                                                "type": "group",
+                                                "children": [
+                                                    {
+                                                        "type": "window",
+                                                        "config": {
+                                                            "appName": "stocks",
+                                                            "title": "Stocks"
+                                                        }
+                                                    }
+                                                ],
+                                                "config": {}
+                                            }
+                                        ],
+                                        "config": {}
+                                    }
+                                ],
+                                "config": {}
+                            }
+                        ],
+                        "config": {}
+                    }
+                ],
+                "config": {
+                    "name": "Client Space",
+                    "title": "Client Space"
+                },
+                "context": {}
+            }
+        }
+    ]
+}

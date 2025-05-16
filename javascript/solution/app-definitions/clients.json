@@ -1,0 +1,17 @@
+{
+    "name": "clients",
+    "title": "Clients",
+    "type": "window",
+    "details": {
+        "url": "http://localhost:9000/",
+        "minWidth": 400,
+        "minHeight": 400,
+        "channelSelector": {
+            "enabled": false
+        }
+    },
+    "customProperties": {
+        "folder": "Asset Management",
+        "includeInWorkspaces": true
+    }
+}

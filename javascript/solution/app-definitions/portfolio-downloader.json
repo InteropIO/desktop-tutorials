@@ -1,0 +1,20 @@
+{
+    "name": "portfolio-downloader",
+    "title": "Portfolio Downloader",
+    "type": "window",
+    "details": {
+        "url": "http://localhost:9300/"
+    },
+    "intents": [
+        {
+            "name": "ExportPortfolio",
+            "displayName": "Download Portfolio",
+            "contexts": [
+                "ClientPortfolio"
+            ]
+        }
+    ],
+    "customProperties": {
+        "folder": "Asset Management"
+    }
+}
