@@ -1,0 +1,31 @@
+{
+  "name": "ts-tutorial-solution",
+  "version": "1.0.0",
+  "description": "io.Connect Desktop TypeScript Tutorial - Solution",
+  "scripts": {
+    "build": "npm run build:clients && npm run build:stocks && npm run build:client-details && npm run build:portfolio-downloader",
+    "build:clients": "webpack --config clients/webpack.config.js",
+    "build:stocks": "webpack --config stocks/webpack.config.js",
+    "build:client-details": "webpack --config client-details/webpack.config.js",
+    "build:portfolio-downloader": "webpack --config portfolio-downloader/webpack.config.js",
+    "start:clients": "http-server ./clients/dist -p 9000 -c-1",
+    "start:stocks": "http-server ./stocks/dist -p 9100 -c-1",
+    "start:clientDetails": "http-server ./client-details/dist -p 9200 -c-1",
+    "start:downloader": "http-server ./portfolio-downloader/dist -p 9300 -c-1",
+    "start": "concurrently \"npm run start:clients\" \"npm run start:stocks\" \"npm run start:clientDetails\" \"npm run start:downloader\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.90.3",
+    "webpack-cli": "^5.1.4",
+    "copy-webpack-plugin": "^12.0.2"
+  }
+}
