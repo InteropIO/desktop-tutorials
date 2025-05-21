@@ -4,10 +4,10 @@
   "description": "io.Connect Desktop TypeScript Tutorial - Start",
   "scripts": {
     "build": "npm run build:clients && npm run build:stocks && npm run build:client-details && npm run build:portfolio-downloader",
-    "build:clients": "webpack --config clients/webpack.config.js",
-    "build:stocks": "webpack --config stocks/webpack.config.js",
-    "build:client-details": "webpack --config client-details/webpack.config.js",
-    "build:portfolio-downloader": "webpack --config portfolio-downloader/webpack.config.js",
+    "build:clients": "node clients/esbuild.js",
+    "build:stocks": "node stocks/esbuild.js",
+    "build:client-details": "node client-details/esbuild.js",
+    "build:portfolio-downloader": "node portfolio-downloader/esbuild.js",
     "start:clients": "http-server ./clients/dist -p 9000 -c-1",
     "start:stocks": "http-server ./stocks/dist -p 9100 -c-1",
     "start:clientDetails": "http-server ./client-details/dist -p 9200 -c-1",
@@ -22,10 +22,7 @@
     "http-server": "^14.1.1"
   },
   "devDependencies": {
-    "ts-loader": "^9.5.1",
-    "typescript": "^5.3.3",
-    "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4",
-    "copy-webpack-plugin": "^12.0.2"
+    "esbuild": "^0.20.1",
+    "typescript": "^5.3.3"
   }
 }
