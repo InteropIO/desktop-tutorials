@@ -24,7 +24,7 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [
         { from: 'src/index.html', to: 'index.html' },
-        { from: '../../../javascript/solution/client-details/lib', to: 'lib' }
+        { from: 'src/lib', to: 'lib' }
       ],
     }),
   ],

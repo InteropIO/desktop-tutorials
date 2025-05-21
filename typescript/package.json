@@ -1,0 +1,14 @@
+{
+  "name": "ts-tutorial",
+  "version": "1.0.0",
+  "description": "io.Connect Desktop TypeScript Tutorial",
+  "scripts": {
+    "install:all": "cd solution && npm install && cd ../start && npm install",
+    "build:solution": "cd solution && npm run build",
+    "build:start": "cd start && npm run build",
+    "build": "npm run build:solution && npm run build:start"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

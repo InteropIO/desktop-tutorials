@@ -1,0 +1,33 @@
+[
+    {
+        "name": "stocks",
+        "title": "Stocks",
+        "type": "window",
+        "ignoreSavedLayout": true,
+        "details": {
+            "url": "http://localhost:9100/",
+            "width": 500,
+            "height": 450,
+            "minWidth": 450,
+            "minHeight": 400,
+            "channelSelector": {
+                "enabled": false
+            }
+        },
+        "customProperties": {
+            "folder": "Asset Management",
+            "includeInWorkspaces": true
+        }
+    },
+    {
+        "name": "stock-details",
+        "title": "Stock Details",
+        "type": "window",
+        "details": {
+            "url": "http://localhost:9100/details"
+        },
+        "customProperties": {
+            "folder": "Asset Management"
+        }
+    }
+]
