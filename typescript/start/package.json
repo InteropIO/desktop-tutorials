@@ -1,0 +1,28 @@
+{
+  "name": "ts-tutorial-start",
+  "version": "1.0.0",
+  "description": "io.Connect Desktop TypeScript Tutorial - Start",
+  "scripts": {
+    "build": "npm run build:clients && npm run build:stocks && npm run build:client-details && npm run build:portfolio-downloader",
+    "build:clients": "node clients/esbuild.js",
+    "build:stocks": "node stocks/esbuild.js",
+    "build:client-details": "node client-details/esbuild.js",
+    "build:portfolio-downloader": "node portfolio-downloader/esbuild.js",
+    "start:clients": "http-server ./clients/dist -p 9000 -c-1",
+    "start:stocks": "http-server ./stocks/dist -p 9100 -c-1",
+    "start:clientDetails": "http-server ./client-details/dist -p 9200 -c-1",
+    "start:downloader": "http-server ./portfolio-downloader/dist -p 9300 -c-1",
+    "start": "concurrently \"npm run start:clients\" \"npm run start:stocks\" \"npm run start:clientDetails\" \"npm run start:downloader\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^9.1.2",
+    "http-server": "^14.1.1"
+  },
+  "devDependencies": {
+    "esbuild": "^0.20.1",
+    "typescript": "^5.3.3"
+  }
+}
