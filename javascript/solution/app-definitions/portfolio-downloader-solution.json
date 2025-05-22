@@ -1,13 +1,13 @@
 {
-    "name": "portfolio-downloader",
-    "title": "Portfolio Downloader",
+    "name": "portfolio-downloader-solution",
+    "title": "Portfolio Downloader (solution)",
     "type": "window",
     "details": {
-        "url": "http://localhost:9300/"
+        "url": "http://localhost:9301/"
     },
     "intents": [
         {
-            "name": "ExportPortfolio",
+            "name": "ExportPortfolio (solution)",
             "displayName": "Download Portfolio",
             "contexts": [
                 "ClientPortfolio"
@@ -15,6 +15,6 @@
         }
     ],
     "customProperties": {
-        "folder": "Asset Management"
+        "folder": "Asset Management (solution)"
     }
 }

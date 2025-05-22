@@ -1,9 +1,9 @@
 {
-    "name": "clients",
-    "title": "Clients",
+    "name": "clients-solution",
+    "title": "Clients (solution)",
     "type": "window",
     "details": {
-        "url": "http://localhost:9000/",
+        "url": "http://localhost:9001/",
         "minWidth": 400,
         "minHeight": 400,
         "channelSelector": {
@@ -11,7 +11,7 @@
         }
     },
     "customProperties": {
-        "folder": "Asset Management",
+        "folder": "Asset Management (solution)",
         "includeInWorkspaces": true
     }
 }

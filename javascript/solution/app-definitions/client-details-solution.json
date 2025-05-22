@@ -1,0 +1,12 @@
+{
+    "name": "client-details-solution",
+    "title": "Client Details (solution)",
+    "type": "window",
+    "details": {
+        "url": "http://localhost:9201/"
+    },
+    "customProperties": {
+        "folder": "Asset Management (solution)",
+        "includeInWorkspaces": true
+    }
+}

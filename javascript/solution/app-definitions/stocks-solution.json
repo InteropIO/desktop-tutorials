@@ -1,11 +1,11 @@
 [
     {
-        "name": "stocks",
-        "title": "Stocks",
+        "name": "stocks-solution",
+        "title": "Stocks (solution)",
         "type": "window",
         "ignoreSavedLayout": true,
         "details": {
-            "url": "http://localhost:9100/",
+            "url": "http://localhost:9101/",
             "width": 500,
             "height": 450,
             "minWidth": 450,
@@ -15,19 +15,19 @@
             }
         },
         "customProperties": {
-            "folder": "Asset Management",
+            "folder": "Asset Management (solution)",
             "includeInWorkspaces": true
         }
     },
     {
-        "name": "stock-details",
-        "title": "Stock Details",
+        "name": "stock-details-solution",
+        "title": "Stock Details (solution)",
         "type": "window",
         "details": {
-            "url": "http://localhost:9100/details"
+            "url": "http://localhost:9101/details"
         },
         "customProperties": {
-            "folder": "Asset Management"
+            "folder": "Asset Management (solution)"
         }
     }
 ]

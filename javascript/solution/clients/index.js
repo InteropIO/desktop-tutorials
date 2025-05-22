@@ -67,7 +67,7 @@ const clientClickedHandler = async (client) => {
     };
 
     try {
-        const workspace = await io.workspaces.restoreWorkspace("Client Space", restoreConfig);
+        const workspace = await io.workspaces.restoreWorkspace("Client Space (solution)", restoreConfig);
 
         await raiseNotificationOnWorkspaceOpen(client.name, workspace);
     } catch (error) {
@@ -83,7 +83,7 @@ const clientClickedHandler = async (client) => {
 
 //     // TODO: Chapter 4.1
 //     // const name = `Stocks-${instanceID || counter}`;
-//     // const URL = "http://localhost:9100/";
+//     // const URL = "http://localhost:9101/";
 //     // const config = {
 //     //     width: 500,
 //     //     height: 450,
@@ -100,7 +100,7 @@ const clientClickedHandler = async (client) => {
 //     // sessionStorage.setItem("counter", counter);
 
 //     // TODO: Chapter 8.1
-//     const stocksApp = io.appManager.application("stocks");
+//     const stocksApp = io.appManager.application("stocks-solution");
 //     const currentChannel = io.channels.my();
 //     const context = { channel: currentChannel };
 
@@ -162,7 +162,7 @@ const start = async () => {
         description: "Starts the Stocks app."
     };
 
-    const stocksAppHotkeyHandler = () => io.appManager.application("stocks").start();
+    const stocksAppHotkeyHandler = () => io.appManager.application("stocks-solution").start();
 
     const themeHotkey = {
         hotkey: "alt+shift+t",

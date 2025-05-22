@@ -1,5 +1,5 @@
 {
-    "name": "Client Space",
+    "name": "Client Space (solution)",
     "type": "Workspace",
     "metadata": {},
     "components": [
@@ -19,8 +19,8 @@
                                             {
                                                 "type": "window",
                                                 "config": {
-                                                    "appName": "client-details",
-                                                    "title": "Client Details"
+                                                    "appName": "client-details-solution",
+                                                    "title": "Client Details (solution)"
                                                 }
                                             }
                                         ],
@@ -35,8 +35,8 @@
                                                     {
                                                         "type": "window",
                                                         "config": {
-                                                            "appName": "stocks",
-                                                            "title": "Stocks"
+                                                            "appName": "stocks-solution",
+                                                            "title": "Stocks (solution)"
                                                         }
                                                     }
                                                 ],
@@ -53,8 +53,8 @@
                     }
                 ],
                 "config": {
-                    "name": "Client Space",
-                    "title": "Client Space"
+                    "name": "Client Space (solution)",
+                    "title": "Client Space (solution)"
                 },
                 "context": {}
             }
