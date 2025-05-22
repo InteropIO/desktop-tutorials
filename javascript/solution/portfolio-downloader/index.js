@@ -3,7 +3,9 @@ const intentHandler = (context) => {
         return;
     };
 
-    setupTitle(context.data.clientName);
+    const clientName = context.data.clientName;
+
+    setupTitle(clientName);
 
     const dataToWrite = JSON.stringify({
         date: new Date(Date.now()).toLocaleString("en-US"),
@@ -13,6 +15,7 @@ const intentHandler = (context) => {
     const download = document.getElementById("download");
     const href = URL.createObjectURL(blob);
 
+    download.setAttribute("download", `${clientName}.json`);
     download.href = href;
     download.click();
     URL.revokeObjectURL(href);
@@ -53,7 +56,7 @@ async function start() {
     io.themes.onChanged(themeHandler);
 
     // TODO: Chapter 10.1
-    io.intents.register("ExportPortfolio", intentHandler);
+    io.intents.register("ExportPortfolio (solution)", intentHandler);
 };
 
 start().catch(console.error);

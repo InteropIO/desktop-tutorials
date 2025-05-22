@@ -144,7 +144,7 @@ const stockClickedHandler = async (stock) => {
     // TODO: Chapter 4.1
     // window.location.href = `http://${window.location.host}/details/index.html`;
     // const name = `${stock.BPOD} Details`;
-    // const URL = "http://localhost:9100/details/";
+    // const URL = "http://localhost:9101/details/";
     // const config = {
     //     left: 100,
     //     top: 100,
@@ -160,7 +160,7 @@ const stockClickedHandler = async (stock) => {
     // };
 
     // TODO: Chapter 8.3
-    // const detailsApp = io.appManager.application("stock-details");
+    // const detailsApp = io.appManager.application("stock-details-solution");
 
     // const contexts = await Promise.all(
     //     detailsApp.instances.map(instance => instance.getContext())
@@ -184,7 +184,7 @@ const stockClickedHandler = async (stock) => {
 
     const myWorkspace = await io.workspaces.getMyWorkspace();
 
-    let detailsWorkspaceWindow = myWorkspace.getWindow(window => window.appName === "stock-details");
+    let detailsWorkspaceWindow = myWorkspace.getWindow(window => window.appName === "stock-details-solution");
 
     if (detailsWorkspaceWindow) {
         detailsWindow = detailsWorkspaceWindow.getGdWindow();
@@ -193,7 +193,7 @@ const stockClickedHandler = async (stock) => {
         const myImmediateParent = myWorkspace.getWindow(window => window.id === myId).parent;
         const group = await myImmediateParent.parent.addGroup();
 
-        detailsWorkspaceWindow = await group.addWindow({ appName: "stock-details" });
+        detailsWorkspaceWindow = await group.addWindow({ appName: "stock-details-solution" });
 
         await detailsWorkspaceWindow.forceLoad();
 
@@ -206,14 +206,14 @@ const stockClickedHandler = async (stock) => {
 const exportPortfolioButtonHandler = async (portfolio) => {
     // TODO: Chapter 10.2
     try {
-        const intents = await io.intents.find("ExportPortfolio");
+        const intents = await io.intents.find("ExportPortfolio (solution)");
 
         if (!intents) {
             return;
         };
 
         const intentRequest = {
-            intent: "ExportPortfolio",
+            intent: "ExportPortfolio (solution)",
             context: {
                 type: "ClientPortfolio",
                 data: { portfolio, clientName }
